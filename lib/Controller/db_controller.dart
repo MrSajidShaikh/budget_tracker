@@ -17,7 +17,7 @@ class DatabaseController extends GetxController {
     initDb();
   }
 
-  void setIsIncome(bool value){
+  void setIsIncome(bool value) {
     isIncome.value = value;
   }
 
@@ -34,10 +34,10 @@ class DatabaseController extends GetxController {
     totalIncome = 0.0.obs;
     totalExpense = 0.0.obs;
     data.value = await DatabaseHelper.databaseHelper.readData();
-    for(var check in data){
-      if(check['isIncome'] == 1){
+    for (var check in data) {
+      if (check['isIncome'] == 1) {
         totalIncome.value += check['amount'];
-      } else{
+      } else {
         totalExpense.value += check['amount'];
       }
     }
