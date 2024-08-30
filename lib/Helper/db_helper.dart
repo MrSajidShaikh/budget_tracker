@@ -34,7 +34,8 @@ class DatabaseHelper {
     );
   }
 
-  Future<int> insertData(double amount, int isIncome, String category, String img) async {
+  Future<int> insertData(
+      double amount, int isIncome, String category, String img) async {
     final db = await database;
     String sql = '''
     INSERT INTO $tableName (amount, isIncome, category, img)
