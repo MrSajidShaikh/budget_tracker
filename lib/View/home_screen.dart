@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
         title: const Text('Budget Tracker'),
       ),
       body: Obx(
-            () => Padding(
+        () => Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
@@ -111,7 +111,7 @@ class HomeScreen extends StatelessWidget {
                     child: ListTile(
                       leading: CircleAvatar(
                         backgroundImage:
-                        FileImage(File(controller.data[index]['img'])),
+                            FileImage(File(controller.data[index]['img'])),
                       ),
                       title: Text(controller.data[index]['amount'].toString()),
                       subtitle: Text(controller.data[index]['category']),
@@ -132,29 +132,32 @@ class HomeScreen extends StatelessWidget {
                                         GestureDetector(
                                           onTap: () async {
                                             ImagePicker imagePicker =
-                                            ImagePicker();
+                                                ImagePicker();
                                             controller.xFileImage.value =
-                                            (await imagePicker.pickImage(
-                                                source: ImageSource.gallery));
+                                                (await imagePicker.pickImage(
+                                                    source:
+                                                        ImageSource.gallery));
                                             controller.pickImage();
                                           },
                                           child: Obx(
-                                                () => CircleAvatar(
+                                            () => CircleAvatar(
                                               radius: 30,
                                               backgroundImage:
-                                              controller.fileImage.value !=
-                                                  null
-                                                  ? FileImage(
-                                                File(controller
-                                                    .fileImage
-                                                    .value!
-                                                    .path),
-                                              )
-                                                  : null,
-                                              child: controller.fileImage.value ==
-                                                  null
-                                                  ? const Icon(Icons.add_a_photo)
-                                                  : null,
+                                                  controller.fileImage.value !=
+                                                          null
+                                                      ? FileImage(
+                                                          File(controller
+                                                              .fileImage
+                                                              .value!
+                                                              .path),
+                                                        )
+                                                      : null,
+                                              child:
+                                                  controller.fileImage.value ==
+                                                          null
+                                                      ? const Icon(
+                                                          Icons.add_a_photo)
+                                                      : null,
                                             ),
                                           ),
                                         ),
@@ -173,7 +176,7 @@ class HomeScreen extends StatelessWidget {
                                           controller: controller.txtCategory,
                                         ),
                                         Obx(
-                                              () => SwitchListTile(
+                                          () => SwitchListTile(
                                             activeTrackColor: Colors.green,
                                             title: const Text('Income'),
                                             value: controller.isIncome.value,
@@ -200,7 +203,7 @@ class HomeScreen extends StatelessWidget {
                                         String img =
                                             controller.fileImage.value!.path;
                                         bool response =
-                                        formKey.currentState!.validate();
+                                            formKey.currentState!.validate();
                                         if (response) {
                                           controller.updateRecord(
                                             controller.data[index]['id'],
@@ -270,12 +273,12 @@ class HomeScreen extends StatelessWidget {
                         controller.pickImage();
                       },
                       child: Obx(
-                            () => CircleAvatar(
+                        () => CircleAvatar(
                           radius: 30,
                           backgroundImage: controller.fileImage.value != null
                               ? FileImage(
-                            File(controller.fileImage.value!.path),
-                          )
+                                  File(controller.fileImage.value!.path),
+                                )
                               : null,
                           child: controller.fileImage.value == null
                               ? const Icon(Icons.add_a_photo)
@@ -298,7 +301,7 @@ class HomeScreen extends StatelessWidget {
                       controller: controller.txtCategory,
                     ),
                     Obx(
-                          () => SwitchListTile(
+                      () => SwitchListTile(
                         activeTrackColor: Colors.green,
                         title: const Text('Income'),
                         value: controller.isIncome.value,
