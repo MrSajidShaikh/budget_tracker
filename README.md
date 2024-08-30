@@ -1,16 +1,13 @@
 # budget_tracker
 
-A new Flutter project.
+<h1 align = "center">
+  
 
-## Getting Started
+  <img src="https://github.com/user-attachments/assets/3c5f4350-1dde-4f9e-9d67-6e27731f65f6" height=65%  width=22%>
 
-This project is a starting point for a Flutter application.
+  <img src="https://github.com/user-attachments/assets/a84f3246-fabd-4fe0-95c3-5de4ae93b33d" height=65%  width=22%>
+  
+  <img src="https://github.com/user-attachments/assets/bac6b098-a357-496b-a041-73334da6cca2" height=65%  width=22%>
+</h1>
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
