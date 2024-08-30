@@ -1,5 +1,7 @@
+import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../Helper/db_helper.dart';
 
@@ -10,6 +12,8 @@ class DatabaseController extends GetxController {
   RxBool isIncome = false.obs;
   RxDouble totalIncome = 0.0.obs;
   RxDouble totalExpense = 0.0.obs;
+  Rx<File?> fileImage = Rx<File?>(null);
+  Rx<XFile?> xFileImage = Rx<XFile?>(null);
 
   @override
   void onInit() {
@@ -25,8 +29,10 @@ class DatabaseController extends GetxController {
     await DatabaseHelper.databaseHelper.database;
   }
 
-  Future<void> initRecord(double amount, int isIncome, String category) async {
-    await DatabaseHelper.databaseHelper.insertData(amount, isIncome, category);
+  Future<void> initRecord(
+      double amount, int isIncome, String category, String img) async {
+    await DatabaseHelper.databaseHelper
+        .insertData(amount, isIncome, category, img);
     await getRecords();
   }
 
@@ -44,15 +50,28 @@ class DatabaseController extends GetxController {
     return data;
   }
 
+  Future getRecordsBySearch(String search) async {
+    data.value = await DatabaseHelper.databaseHelper.readDataBySearch(search);
+    return data;
+  }
+
+  Future getCategoryRecord(int isIncome) async {
+    data.value = await DatabaseHelper.databaseHelper.readCategoryData(isIncome);
+  }
+
   Future<void> updateRecord(
-      int id, double amount, int isIncome, String category) async {
+      int id, double amount, int isIncome, String category, String img) async {
     await DatabaseHelper.databaseHelper
-        .updateData(id, amount, isIncome, category);
+        .updateData(id, amount, isIncome, category, img);
     await getRecords();
   }
 
   Future<void> deleteRecord(int id) async {
     await DatabaseHelper.databaseHelper.deleteData(id);
     await getRecords();
+  }
+
+  void pickImage() {
+    fileImage.value = File(xFileImage.value!.path);
   }
 }
