@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'View/home_screen.dart';
+import 'View/splash_screen.dart';
 
-void main() {
+void main()
+{
   runApp(const MyApp());
 }
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -14,10 +15,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: [
-        GetPage(
-          name: '/',
-          page: () => const HomeScreen(),
-        ),
+        GetPage(name: '/', page: () => const SplashPage(),),
+        GetPage(name: '/home', page: () => const HomePage(),)
       ],
     );
   }
