@@ -36,7 +36,7 @@ class DataBaseHelper {
   Future insertData(double amount, int isIncome, String category) async {
     Database? db = await database;
     String sql =
-    '''INSERT INTO budget (amount,isIncome,category) VALUES (?,?,?)''';
+        '''INSERT INTO budget (amount,isIncome,category) VALUES (?,?,?)''';
     List args = [amount, isIncome, category];
     await db!.rawInsert(sql, args);
   }
