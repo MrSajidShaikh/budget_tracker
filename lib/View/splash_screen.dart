@@ -28,7 +28,7 @@ class SplashPage extends StatelessWidget {
                 ),
               ),
             ),
-            Text('Budget Tracker',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25),)
+            const Text('Budget Tracker',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25),)
           ],
         ),
       ),
