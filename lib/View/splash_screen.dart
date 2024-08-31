@@ -22,7 +22,7 @@ class SplashPage extends StatelessWidget {
             Container(
               height: h * 0.15,
               width: w * 0.51,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/images/budgetTracker.png'),
                 ),
