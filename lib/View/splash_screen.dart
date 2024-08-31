@@ -17,7 +17,8 @@ class SplashPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xffFFFFFF),
       body: Center(
-        child: Column(mainAxisAlignment: MainAxisAlignment.center,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               height: h * 0.15,
@@ -28,7 +29,10 @@ class SplashPage extends StatelessWidget {
                 ),
               ),
             ),
-            const Text('Budget Tracker',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25),)
+            const Text(
+              'Budget Tracker',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+            )
           ],
         ),
       ),
