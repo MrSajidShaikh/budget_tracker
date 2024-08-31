@@ -51,7 +51,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   Obx(
-                        () => SwitchListTile(
+                    () => SwitchListTile(
                       title: const Text(
                         'Income/Expense',
                         style: TextStyle(fontWeight: FontWeight.bold),
@@ -72,7 +72,7 @@ class HomePage extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.green,
                     padding:
-                    const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
                     minimumSize: const Size(100, 10),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
@@ -101,7 +101,7 @@ class HomePage extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.green,
                     padding:
-                    const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
                     minimumSize: const Size(100, 10),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
@@ -123,7 +123,7 @@ class HomePage extends StatelessWidget {
         child: const Icon(Icons.add),
       ),
       body: Obx(
-            () => Column(
+        () => Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -136,7 +136,8 @@ class HomePage extends StatelessWidget {
                     child: Center(
                       child: Text(
                         controller.totalIncome.value.toString(),
-                        style: const TextStyle(color: Colors.white, fontSize: 18),
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 18),
                       ),
                     ),
                   ),
@@ -149,7 +150,8 @@ class HomePage extends StatelessWidget {
                     child: Center(
                       child: Text(
                         controller.totalExpense.value.toString(),
-                        style: const TextStyle(color: Colors.white, fontSize: 18),
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 18),
                       ),
                     ),
                   ),
@@ -170,7 +172,7 @@ class HomePage extends StatelessWidget {
                         style: const TextStyle(fontSize: 16),
                       ),
                       subtitle:
-                      Text(controller.data[index]['category'].toString()),
+                          Text(controller.data[index]['category'].toString()),
                       title: Text(controller.data[index]['amount'].toString()),
                       trailing: IconButton(
                         onPressed: () {
