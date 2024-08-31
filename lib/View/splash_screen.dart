@@ -15,7 +15,7 @@ class SplashPage extends StatelessWidget {
     double h = MediaQuery.of(context).size.height;
     double w = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Color(0xffFFFFFF),
+      backgroundColor: const Color(0xffFFFFFF),
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center,
           children: [
