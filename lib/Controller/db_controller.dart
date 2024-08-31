@@ -17,37 +17,36 @@ class HomeController extends GetxController {
     super.onInit();
     initDb();
   }
-  void setIncome(bool value)
-  {
-    isIncome.value=value;
+
+  void setIncome(bool value) {
+    isIncome.value = value;
   }
-  Future initDb()async{
+
+  Future initDb() async {
     await DataBaseHelper.dataBaseHelper.database;
     await getRecords();
   }
-  Future insertRecord(double amount,int isIncome,String category)async{
+
+  Future insertRecord(double amount, int isIncome, String category) async {
     await DataBaseHelper.dataBaseHelper.insertData(amount, isIncome, category);
     await getRecords();
   }
-  Future getRecords()async{
-    totalExpense.value=0.0;
-    totalIncome.value=0.0;
-    data.value=await DataBaseHelper.dataBaseHelper.readData();
-    for(var i in data)
-    {
-      if(i['isIncome']==1)
-      {
-        totalIncome.value=totalIncome.value+i['amount'];
-      }
-      else
-      {
-        totalExpense.value=totalExpense.value+i['amount'];
-      }
 
+  Future getRecords() async {
+    totalExpense.value = 0.0;
+    totalIncome.value = 0.0;
+    data.value = await DataBaseHelper.dataBaseHelper.readData();
+    for (var i in data) {
+      if (i['isIncome'] == 1) {
+        totalIncome.value = totalIncome.value + i['amount'];
+      } else {
+        totalExpense.value = totalExpense.value + i['amount'];
+      }
     }
     return data;
   }
-  Future removeData(int id)async{
+
+  Future removeData(int id) async {
     await DataBaseHelper.dataBaseHelper.deleteData(id);
     await getRecords();
   }
