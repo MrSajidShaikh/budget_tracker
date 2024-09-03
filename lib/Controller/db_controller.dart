@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_rx/get_rx.dart';
 import '../Helper/db_helper.dart';
 
 class HomeController extends GetxController {
