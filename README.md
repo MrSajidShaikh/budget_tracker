@@ -1,4 +1,4 @@
-# budget_tracker
+budget_tracker
 
 <h1 align = "center">
   
